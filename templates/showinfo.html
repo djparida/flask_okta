@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}Show Info{% endblock %}
+
+{% block body %}
+<h1 class="text-center">User Info</h1>
+  <div class="row">
+    <div class="col-sm-8 offset-sm-2">
+        <center>
+           <p> curl -v -X GET \ </p>
+           <p>-H "Accept: application/json" \ </p>
+           <p>-H "Content-Type: application/json" \ </p>
+           <p>-H "Authorization: SSWS ${api_token}" \ </p>
+        <p>"https://dev-685287-admin.okta.com/api/v1/users/{{ g.user.id }}"</p>
+        <p><code>"The Above function has been used to get the user information"</code></p>
+
+       <center><a href = "https://dev-685287-admin.okta.com/api/v1/users/{{ g.user.id }}" target="_blank">Get The Info</a></center>
+       <p>My First Name is {{firstName}}</p>
+       <p>My Last Name is {{lastName}}</p>
+       <p>My City is {{City}}</p>
+       <p>My State is {{State}}</p>
+       <p>My USA Mobile number is {{USA_Mobile}}</p>
+       <p>My UK Mobile number is {{UK_Mobile}}</p>
+       <p>My India Mobile Number is {{India_Mobile}}</p>
+        </center>
+    </div>
+  </div>
+
+
+{% endblock %}
